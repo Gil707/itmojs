@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work2</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/grid.css">
+    <script type="text/javascript" src="functions.js"></script>
+
+</head>
+<body>
+
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>1. Перераспределение чисел</h2>
+    <form>
+        <input type="number" id="x" value=""><label for="num1">Введите X: </label><br>
+        <input type="number" id="y" value=""><label for="num1">Введите Y: </label><br>
+        <input type="button" value="Поменять" onclick="changeValues()"><br>
+        Ответ: <input type="text" id="result1" disabled
+                       style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    </form>
+</div>
+
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>1. Прямоугольность треугольника</h2>
+    <form>
+        Точка А: <input type="number" id="ax" value="">
+                 <input type="number" id="ay" value=""><br>
+        Точка B: <input type="number" id="bx" value="">
+                 <input type="number" id="by" value=""><br>
+        Точка C: <input type="number" id="cx" value="">
+                 <input type="number" id="cy" value=""><br>
+        <input type="button" value="Поменять" onclick="getTriangle()"><br>
+        Ответ: <input type="text" id="result2" disabled
+                      style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    </form>
+</div>
+
+</body>
+</html>
