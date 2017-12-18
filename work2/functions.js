@@ -4,9 +4,13 @@ function changeValues() {
         y = parseFloat(document.getElementById('y').value),
         result = document.getElementById('result1');
 
-    x = [y, y = x][0];
+    if (x > y) {
+        x = [y, y = x][0];
+    }
 
-    result.value = 'X = ' + x + ', Y = ' + y;
+    result.value = 'X = ' + x + ' (наименьшее), Y = ' + y;
+
+    if (x === y) result.value = 'Значения равны';
 
 }
 
@@ -52,14 +56,15 @@ function getSeason() {
 
 
 function getMathTable() {
+
     for (i = 1; i <= 10; i++) {
         document.write('<tr style="background-color: #f8f8f8">');
         for (j = 1; j <= 10; j++) {
             document.write('<td style="padding: 6px;">' + (i * j) + '</td>')
         }
         document.write('</tr>');
-
     }
+
 }
 
 
