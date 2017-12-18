@@ -19,9 +19,9 @@
                        style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
     </form>
 </div>
-
+<br>
 <div style="border: 1px dashed #333; padding: 10px;">
-    <h2>1. Прямоугольность треугольника</h2>
+    <h2>2. Прямоугольность треугольника</h2>
     <form>
         Точка А: <input type="number" id="ax" value="">
                  <input type="number" id="ay" value=""><br>
@@ -29,11 +29,40 @@
                  <input type="number" id="by" value=""><br>
         Точка C: <input type="number" id="cx" value="">
                  <input type="number" id="cy" value=""><br>
-        <input type="button" value="Поменять" onclick="getTriangle()"><br>
+        <input type="button" value="Get" onclick="getTriangle()"><br>
         Ответ: <input type="text" id="result2" disabled
                       style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
     </form>
 </div>
-
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>3. Номер месяца</h2>
+    <form>
+        Номер месяца: <input type="number" id="month" value="">
+        <input type="button" value="Поменять" onclick="getSeason()"><br>
+    </form>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>4. Таблица умножения</h2>
+    <table style="border: 1px dashed lightgray">
+        <script type="text/javascript">
+            getMathTable();
+        </script>
+    </table>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>5. Длина отрезка (в м.)</h2>
+    <select id="lenghtype">
+        <option value="1">Дециметр</option>
+        <option value="2">Километр</option>
+        <option value="3">Метр</option>
+        <option value="4">Миллиметр</option>
+        <option value="5">Сантиметр</option>
+    </select>
+    <input type="number" id="value" value="">
+    <input type="button" value="Get" onclick="getLength()">
+</div>
 </body>
 </html>

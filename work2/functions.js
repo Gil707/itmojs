@@ -33,3 +33,57 @@ function getTriangle() {
         result.value = 'Треугольник не прямоугольный';
 
 }
+
+function getSeason() {
+
+    var month = parseInt(document.getElementById('month').value);
+
+    if ((month >= 1 && month <= 2) || month === 12) {
+        alert("Зима")
+    } else if (month >= 3 && month <= 5) {
+        alert("Весна")
+    } else if (month >= 6 && month <= 8) {
+        alert("Лето")
+    } else if (month >= 9 && month <= 11) {
+        alert("Осень")
+    } else alert("Not a month");
+
+}
+
+
+function getMathTable() {
+    for (i = 1; i <= 10; i++) {
+        document.write('<tr style="background-color: #f8f8f8">');
+        for (j = 1; j <= 10; j++) {
+            document.write('<td style="padding: 6px;">' + (i * j) + '</td>')
+        }
+        document.write('</tr>');
+
+    }
+}
+
+
+function getLength() {
+
+    var value = parseFloat(document.getElementById('value').value),
+        lenghtype = parseInt(document.getElementById('lenghtype').value);
+
+    switch (lenghtype) {
+        case 1:
+            alert('Длина отрезка = ' + (value / 10).toFixed(3) + ' м.');        // дециметры
+            break;
+        case 2:
+            alert('Длина отрезка = ' + (value * 1000).toFixed(3) + ' м.');      // километры
+            break;
+        case 3:
+            alert('Длина отрезка = ' + value + ' м.');                          // метры
+            break;
+        case 4:
+            alert('Длина отрезка = ' + (value / 1000).toFixed(3) + ' м.');      // миллиметры
+            break;
+        case 5:
+            alert('Длина отрезка = ' + (value / 100).toFixed(3) + ' м.');       // сантиметры
+            break;
+    }
+
+}
