@@ -22,14 +22,36 @@
 <br>
 <div style="border: 1px dashed #333; padding: 10px;">
     <h2>2. Прямоугольность треугольника</h2>
+    <h4>Если не вводить координаты Z расчет будет производиться в 2-х мерном пространстве.</h4>
     <form>
-        Точка А: <input type="number" id="ax" value="">
-                 <input type="number" id="ay" value=""><br>
-        Точка B: <input type="number" id="bx" value="">
-                 <input type="number" id="by" value=""><br>
-        Точка C: <input type="number" id="cx" value="">
-                 <input type="number" id="cy" value=""><br>
-        <input type="button" value="Get" onclick="getTriangle()"><br>
+        <table>
+            <tr>
+                <td></td>
+                <td align="middle">x</td>
+                <td align="middle">y</td>
+                <td align="middle">z</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td><input type="number" id="ax" value="" style="width: 50px"></td>
+                <td><input type="number" id="ay" value="" style="width: 50px"></td>
+                <td><input type="number" id="az" value="" style="width: 50px"></td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td><input type="number" id="bx" value="" style="width: 50px"></td>
+                <td><input type="number" id="by" value="" style="width: 50px"></td>
+                <td><input type="number" id="bz" value="" style="width: 50px"></td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td><input type="number" id="cx" value="" style="width: 50px"></td>
+                <td><input type="number" id="cy" value="" style="width: 50px"></td>
+                <td><input type="number" id="cz" value="" style="width: 50px"></td>
+            </tr>
+
+        </table><br>
+        <input type="button" value="Get" onclick="getTriangle()"><br><br>
         Ответ: <input type="text" id="result2" disabled
                       style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
     </form>

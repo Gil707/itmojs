@@ -19,15 +19,26 @@ function getTriangle() {
     var ab, ac, bc,
         ax = parseFloat(document.getElementById('ax').value),
         ay = parseFloat(document.getElementById('ay').value),
+        az = parseFloat(document.getElementById('az').value),
         bx = parseFloat(document.getElementById('bx').value),
         by = parseFloat(document.getElementById('by').value),
+        bz = parseFloat(document.getElementById('bz').value),
         cx = parseFloat(document.getElementById('cx').value),
         cy = parseFloat(document.getElementById('cy').value),
+        cz = parseFloat(document.getElementById('cz').value),
         result = document.getElementById('result2');
 
-    ab = Math.sqrt(Math.pow((bx - ax), 2) + Math.pow((by - ay), 2)).toFixed(2);
-    ac = Math.sqrt(Math.pow((cx - ax), 2) + Math.pow((cy - ay), 2)).toFixed(2);
-    bc = Math.sqrt(Math.pow((cx - bx), 2) + Math.pow((cy - by), 2)).toFixed(2);
+    if ((!isNaN(az) || !isNaN(bz) || !isNaN(cz))) {
+        console.log('triangle in 3d');
+        ab = Math.sqrt(Math.pow((bx - ax), 2) + Math.pow((by - ay), 2) + Math.pow((bz - az), 2)).toFixed(2);
+        ac = Math.sqrt(Math.pow((cx - ax), 2) + Math.pow((cy - ay), 2) + Math.pow((cz - az), 2)).toFixed(2);
+        bc = Math.sqrt(Math.pow((cx - bx), 2) + Math.pow((cy - by), 2) + Math.pow((cz - bz), 2)).toFixed(2);
+    } else {
+        console.log('triangle in 2d');
+        ab = Math.sqrt(Math.pow((bx - ax), 2) + Math.pow((by - ay), 2)).toFixed(2);
+        ac = Math.sqrt(Math.pow((cx - ax), 2) + Math.pow((cy - ay), 2)).toFixed(2);
+        bc = Math.sqrt(Math.pow((cx - bx), 2) + Math.pow((cy - by), 2)).toFixed(2);
+    }
 
     if (Math.round((Math.pow(ab, 2) + Math.pow(ac, 2))) === Math.round(Math.pow(bc, 2))
         || Math.round((Math.pow(ac, 2) + Math.pow(bc, 2))) === Math.round(Math.pow(ab, 2))
