@@ -82,13 +82,13 @@ function getSameValues() {
     var nums = [document.getElementById('num01'), document.getElementById('num02'), document.getElementById('num03')],
         component = "";
 
-    if (nums[0].value == nums[1].value && nums[1].value == nums[2].value) {
+    if (nums[0].value === nums[1].value && nums[1].value === nums[2].value) {
         resultfrom5.value = "Все значения равны";
-    } else if (nums[0].value == nums[1].value) {
+    } else if (nums[0].value === nums[1].value) {
         resultfrom5.value = "1-е значение равно 2-му";
-    } else if (nums[0].value == nums[2].value) {
+    } else if (nums[0].value === nums[2].value) {
         resultfrom5.value = "1-е значение равно 3-му";
-    } else if (nums[1].value == nums[2].value) {
+    } else if (nums[1].value === nums[2].value) {
         resultfrom5.value = "2-е значение равно 3-му";
     } else resultfrom5.value = "Не найдено одинаковых значений";
 

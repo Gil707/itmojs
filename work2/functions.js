@@ -30,19 +30,17 @@ function getTriangle() {
 
     if ((!isNaN(az) || !isNaN(bz) || !isNaN(cz))) {
         console.log('triangle in 3d');
-        ab = Math.sqrt(Math.pow((bx - ax), 2) + Math.pow((by - ay), 2) + Math.pow((bz - az), 2)).toFixed(2);
-        ac = Math.sqrt(Math.pow((cx - ax), 2) + Math.pow((cy - ay), 2) + Math.pow((cz - az), 2)).toFixed(2);
-        bc = Math.sqrt(Math.pow((cx - bx), 2) + Math.pow((cy - by), 2) + Math.pow((cz - bz), 2)).toFixed(2);
+        ab = Math.round(Math.pow((bx - ax), 2) + Math.pow((by - ay), 2) + Math.pow((bz - az), 2));
+        ac = Math.round(Math.pow((cx - ax), 2) + Math.pow((cy - ay), 2) + Math.pow((cz - az), 2));
+        bc = Math.round(Math.pow((cx - bx), 2) + Math.pow((cy - by), 2) + Math.pow((cz - bz), 2));
     } else {
         console.log('triangle in 2d');
-        ab = Math.sqrt(Math.pow((bx - ax), 2) + Math.pow((by - ay), 2)).toFixed(2);
-        ac = Math.sqrt(Math.pow((cx - ax), 2) + Math.pow((cy - ay), 2)).toFixed(2);
-        bc = Math.sqrt(Math.pow((cx - bx), 2) + Math.pow((cy - by), 2)).toFixed(2);
+        ab = Math.round(Math.pow((bx - ax), 2) + Math.pow((by - ay), 2));
+        ac = Math.round(Math.pow((cx - ax), 2) + Math.pow((cy - ay), 2));
+        bc = Math.round(Math.pow((cx - bx), 2) + Math.pow((cy - by), 2));
     }
 
-    if (Math.round((Math.pow(ab, 2) + Math.pow(ac, 2))) === Math.round(Math.pow(bc, 2))
-        || Math.round((Math.pow(ac, 2) + Math.pow(bc, 2))) === Math.round(Math.pow(ab, 2))
-        || Math.round((Math.pow(ab, 2) + Math.pow(bc, 2))) === Math.round(Math.pow(ac, 2))) {
+    if ((ab + ac) === bc || (ac + bc) === ab || (ab + bc) === ac) {
         result.value = 'Треугольник прямоугольный';
     } else
         result.value = 'Треугольник не прямоугольный';
