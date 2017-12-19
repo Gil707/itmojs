@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work3</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/grid.css">
+    <script type="text/javascript" src="functions.js"></script>
+
+</head>
+<body>
+
+<h1>Homework</h1>
+<div>
+
+</div>
+
+<br><br>
+<h1>Classwork</h1>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>1. Формат телефона</h2>
+    <h4>В формате х(ххх)ххх-хх-хх</h4>
+    <form>
+        <input type="text" id="phone" value=""><label for="num1"></label><br>
+        <input type="button" value="Проверить" onclick="phoneFormat()"><br>
+        Ответ: <input type="text" id="phoneresult" disabled
+                       style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    </form>
+</div>
+<br>
+
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>2. Проверка почты</h2>
+    <form>
+        <input type="text" id="mail" value=""><label for="num1"></label><br>
+        <input type="button" value="Проверить" onclick="mailCheck()"><br>
+        Ответ: <input type="text" id="mailresult" disabled
+                      style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    </form>
+</div>
+<br>
+
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>3. Проверка даты</h2>
+    <form>
+        <input type="text" id="date" value=""><label for="num1"></label><br>
+        <input type="button" value="Проверить" onclick="dateCheck()"><br>
+        Ответ: <input type="text" id="dateresult" disabled
+                      style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    </form>
+</div>
+<br>
+
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>4. Сумма </h2>
+    <form>
+        <input type="button" value="Проверить" onclick="summ()"><br>
+    </form>
+</div>
+<br>
+
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>5. XOR </h2>
+    <form>
+        <input type="button" value="crypt" onclick="xor()"><br>
+    </form>
+</div>
+<br>
+
+</body>
+</html>

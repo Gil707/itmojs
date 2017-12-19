@@ -66,11 +66,17 @@ function getSeason() {
 
 function getMathTable() {
 
+    var color;
+
     for (i = 1; i <= 10; i++) {
-        document.write('<tr style="background-color: #f8f8f8">');
-        for (j = 1; j <= 10; j++) {
-            document.write('<td style="padding: 6px;">' + (i * j) + '</td>')
-        }
+
+        if (i % 2) {
+            color = '#FF7F50';
+        } else color = '#f8f8f8';
+            document.write('<tr style="background-color: ' + color + '">');
+            for (j = 1; j <= 10; j++) {
+                document.write('<td style="padding: 6px;">' + (i * j) + '</td>')
+            }
         document.write('</tr>');
     }
 
