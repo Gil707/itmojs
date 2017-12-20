@@ -1,3 +1,43 @@
+function summDigits() {
+    var intvalue = parseInt(document.getElementById('intvalue').value),
+        intvalueresult = document.getElementById('intvalueresult'),
+        summ = 0;
+
+    while (intvalue > 0)
+    {
+        summ += intvalue % 10;
+        intvalue = Math.floor(intvalue/10);
+    }
+    intvalueresult.value = summ;
+}
+
+function doubleChar() {
+    var textvalue = document.getElementById('textvalue').value,
+        charvalue = document.getElementById('charvalue').value,
+        count = parseInt(document.getElementById('count').value),
+        textresult = document.getElementById('textresult'),
+        inject = '';
+
+    var regexp = new RegExp(charvalue, 'g');
+
+    for (i=0; i < count; i++) {
+        inject += charvalue;
+    }
+
+    textresult.value = textvalue.replace(regexp, inject);
+}
+
+function checkPwd() {
+    var pwd = document.getElementById('pwd').value,
+        pwdresult = document.getElementById('pwdresult');
+
+    var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=(.*?[0-9]){2})(?=.*?[#?!@$%^&*-]).{9,}$/;
+
+    pwdresult.value = reg.test(pwd);
+
+}
+
+
 function phoneFormat() {
 
     var phone = document.getElementById('phone').value,
