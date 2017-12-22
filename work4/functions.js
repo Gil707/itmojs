@@ -1,3 +1,105 @@
+function arUnion() {
+
+    var arr1 = [12, 4, 3, 10, 1, 20],
+        arr2 = [-3, -7, -100, -33],
+        union1 = document.getElementById('union1'),
+        union2 = document.getElementById('union2');
+
+    var after = arr1.concat(arr2),
+        before = arr2.concat(arr1);
+
+    union1.value = before.toString();
+    union2.value = after.toString();
+
+}
+
+
+function getXO() {
+
+    // var arr = document.getElementById('xoarray').value.split(','),
+    var arr = [1, null, 0, null, 1, null, null, null, null],
+        icon = '';
+
+    for (i = 0; i < arr.length; i += 3) {
+        document.write('<tr>');
+        for (j = i; j < i + 3; j++) {
+            if (arr[j] === 1) {
+                icon = 'X';
+            } else if (arr[j] === 0) {
+                icon = '0';
+            } else icon = '';
+            document.write('<td style="padding: 6px; width: 20px; height: 20px; border: 1px solid gray; text-align: center">' + icon + '</td>')
+        }
+        document.write('</tr>');
+    }
+}
+
+function delMinMax() {
+
+    var arr = document.getElementById('delarray').value.split(','),
+        result = document.getElementById('delarrayresult');
+
+    for (k = 0, len = arr.length; k < len; k++) {
+        arr[k] = parseInt(arr[k]);
+    }
+
+    var min = arr[0], max = arr[0], maxindex = 0, minindex = 0;
+
+    for (i = 0, l = arr.length; i < l; i++) {
+
+        if (arr[i] >= max) {
+            maxindex = i;
+            max = arr[i];
+        } else if (arr[i] < min) {
+            minindex = i;
+            min = arr[i];
+        }
+
+    }
+
+    // delete arr[maxindex];
+    // delete arr[minindex];
+
+    arr.splice(minindex, 1);
+    arr.splice(maxindex - ((maxindex > minindex) ? 1 : 0), 1);
+
+    result.value = ('Result array: ' + arr);
+
+}
+
+function sortArrayCustom() {
+
+    var arr = document.getElementById('sortarray').value.split(','),
+        result = document.getElementById('sortarrayresult');
+
+    var temp, i = 1;
+
+    for (var k = 0, len = arr.length; k < len; k++) {
+        arr[k] = parseInt(arr[k]);
+    }
+
+    console.time('gnomesort');
+
+    while (i < arr.length) {
+        if (i === 0 || arr[i - 1] <= arr[i])
+            i++;
+        else {
+            temp = arr[i];
+            arr[i] = arr[i - 1];
+            arr[i - 1] = temp;
+            i--;
+        }
+    }
+
+    console.timeEnd('gnomesort');
+
+    result.value = (arr);
+
+}
+
+
+/*  Classwork  */
+
 function minMax() {
 
     var arr = [2, 3, 7, 13, 5, 0, 20],
