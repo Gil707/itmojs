@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework6</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/grid.css">
+    <script type="text/javascript" src="functions.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="arrayUtils.js"></script>
+</head>
+<body>
+<h1>Homework6</h1>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>1. Инфа о студенте</h2>
+    <form>
+        <input type="button" value="Показать" onclick="getStudent()"><br>
+    </form>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>2. Факториал</h2>
+    <form>
+        N: <input type="text" id="nfact" value="4"><br>
+        <input type="button" value="Посчитать" onclick="showFactResult()"><br>
+    </form>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>3. Closure</h2>
+    <form>
+        <input type="button" value="Get" onclick="initClosure()"><br>
+        Ответ: in console.
+    </form>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>4. Graph</h2>
+
+    <div id="placeholder" style="width: 480px; height: 400px;"></div>
+
+    <script type="text/javascript">
+
+        var line1 = {
+            x: [],
+            y: [],
+            type: 'scatter'
+        };
+
+        function calcY(x) {
+            if (x < 1) {
+                y = (x * x) - (4 * x);
+            } else {
+                y = 5 / x;
+            }
+            return y.toFixed(3);
+        }
+
+        for (var i = -5; i <= 5; i += 0.01) {
+            line1.x.push(i);
+            line1.y.push(calcY(i));
+        }
+
+        var data = [line1];
+
+        Plotly.newPlot('placeholder', data);
+
+    </script>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>5. Tests (y = 1/x + sqrt(x))</h2>
+    <a href="tests.html">tests</a>
+</div>
+<br>
+
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>6. Array []</h2>
+    Enter array (delimiter ','): <input type="text" id="custarray" value="9,4,3,-3,4,8"><br>
+    <input type="button" value="Get" onclick="getArrayFunc()"><br>
+    Max: <input type="text" id="arrmax" disabled style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    Min: <input type="text" id="arrmin" disabled style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    Avg: <input type="text" id="arravg" disabled style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    Cloned: <input type="text" id="arrcopy" disabled style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+</div>
+<br>
+
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>7. Caesars crypt</h2>
+    Enter string: <input type="text" id="cstring"><br>
+    Shift: <input type="number" id="cshift"> (+/-)<br>
+    <input type="button" value="Encode" onclick="caesarCipher()"><br>
+    Result: <input type="text" id="csres"><br>
+</div>
+<br>
+
+</body>
+</html>
