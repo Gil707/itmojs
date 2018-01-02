@@ -51,15 +51,24 @@ function getNFibs(n) {
     var a = 1,
         b = 1,
         res = [a, b];
-
-    for (var i = 3; i <= n; i++) {
-        var c = a + b;
-        a = b;
-        b = c;
-
-        res.push(b);
+    if (n === 0) {
+        return 0;
     }
-    return res;
+    else if (n === 1) {
+        return 1;
+    }
+    else if (n === 2) {
+        return res;
+    } else {
+        for (var i = 3; i <= n; i++) {
+            var c = a + b;
+            a = b;
+            b = c;
+
+            res.push(b);
+        }
+        return res;
+    }
 }
 
 var itms = 14;
