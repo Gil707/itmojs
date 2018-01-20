@@ -1,0 +1,73 @@
+body {
+    margin: 3px;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    background: url(img/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+h3, h2 {
+    margin: 20px;
+    border-bottom: 1px solid #999999;
+}
+
+#pc_log {
+    color: darkcyan;
+}
+
+#player_coins span {
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    padding: 2px;
+
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+}
+
+#pc_coins span {
+    cursor: pointer;
+}
+
+.pl10c_coin, .pc10c_coin {
+    width: 20px;
+    height: 6px;
+    background-color: darkcyan;
+    margin: 1px;
+    position: absolute;
+}
+.pl20c_coin, .pc20c_coin {
+    width: 25px;
+    height: 6px;
+    background-color: darkcyan;
+    margin: 1px;
+    position: absolute;
+}
+.pl50c_coin, .pc50c_coin {
+    width: 30px;
+    height: 6px;
+    background-color: darkcyan;
+    margin: 1px;
+    position: absolute;
+
+}
+.pl1e_coin, .pc1e_coin{
+    width: 40px;
+    height: 6px;
+    background-color: darkcyan;
+    margin: 1px;
+    position: absolute;
+}
+.pl2e_coin, .pc2e_coin {
+    width: 50px;
+    height: 6px;
+    background-color: darkcyan;
+    margin: 1px;
+    position: absolute;
+}
