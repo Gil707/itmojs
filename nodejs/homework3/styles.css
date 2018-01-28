@@ -1,0 +1,10 @@
+.itm_val {
+    list-style-type: circle;
+    font-family: Courier New, sans-serif
+}
+
+.time_head {
+    color: gray;
+    font-family: Courier New, sans-serif;
+    font-size: 12px
+}
