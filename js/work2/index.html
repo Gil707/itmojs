@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work2</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/grid.css">
+    <script type="text/javascript" src="functions.js"></script>
+
+</head>
+<body>
+
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>1. Перераспределение чисел</h2>
+    <form>
+        <input type="number" id="x" value=""><label for="num1">Введите X: </label><br>
+        <input type="number" id="y" value=""><label for="num1">Введите Y: </label><br>
+        <input type="button" value="Поменять" onclick="changeValues()"><br>
+        Ответ: <input type="text" id="result1" disabled
+                       style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    </form>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>2. Прямоугольность треугольника</h2>
+    <h4>Если не вводить координаты Z расчет будет производиться в 2-х мерном пространстве.</h4>
+    <form>
+        <table>
+            <tr>
+                <td></td>
+                <td align="middle">x</td>
+                <td align="middle">y</td>
+                <td align="middle">z</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td><input type="number" id="ax" value="" style="width: 50px"></td>
+                <td><input type="number" id="ay" value="" style="width: 50px"></td>
+                <td><input type="number" id="az" value="" style="width: 50px"></td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td><input type="number" id="bx" value="" style="width: 50px"></td>
+                <td><input type="number" id="by" value="" style="width: 50px"></td>
+                <td><input type="number" id="bz" value="" style="width: 50px"></td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td><input type="number" id="cx" value="" style="width: 50px"></td>
+                <td><input type="number" id="cy" value="" style="width: 50px"></td>
+                <td><input type="number" id="cz" value="" style="width: 50px"></td>
+            </tr>
+
+        </table><br>
+        <input type="button" value="Get" onclick="getTriangle()"><br><br>
+        Ответ: <input type="text" id="result2" disabled
+                      style="font-size: medium; width: 500px; border: 0; background: transparent"><br>
+    </form>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>3. Номер месяца</h2>
+    <form>
+        Номер месяца: <input type="number" id="month" value="">
+        <input type="button" value="Поменять" onclick="getSeason()"><br>
+    </form>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>4. Таблица умножения</h2>
+    <table style="border: 1px dashed lightgray">
+        <script type="text/javascript">
+            getMathTable();
+        </script>
+    </table>
+</div>
+<br>
+<div style="border: 1px dashed #333; padding: 10px;">
+    <h2>5. Длина отрезка (в м.)</h2>
+    <select id="lenghtype">
+        <option value="1">Дециметр</option>
+        <option value="2">Километр</option>
+        <option value="3">Метр</option>
+        <option value="4">Миллиметр</option>
+        <option value="5">Сантиметр</option>
+    </select>
+    <input type="number" id="value" value="">
+    <input type="button" value="Get" onclick="getLength()">
+</div>
+</body>
+</html>

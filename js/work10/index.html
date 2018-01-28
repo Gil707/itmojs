@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square</title>
+    <style>
+        #field {
+            height: 400px;
+            width: 400px;
+            background-color: lightblue;
+            position: relative;
+        }
+        #red {
+            height: 20px;
+            width: 20px;
+            background-color: red;
+            position: absolute;
+        }
+        #green {
+            height: 20px;
+            width: 20px;
+            background-color: green;
+            position: absolute;
+            left: 150px;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="field">
+        <div id="red" style="top: 0; left: 0"></div>
+        <div id="green"></div>
+    </div>
+    <script src="temp1.js"></script>
+    <script>
+        new SimulatorBattle();
+    </script>
+</body>
+</html>

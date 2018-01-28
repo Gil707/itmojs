@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work8</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/grid.css">
+
+</head>
+<body>
+
+<ul></ul>
+<table id="panel"></table>
+<script>
+
+    var panel = document.getElementById('panel'),
+        cols = +prompt('Enter cell'),
+        arrN = [];
+
+    function getRandNum(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function getNum(arr) {
+        var index = getRandNum(0, arr.length - 1);
+        return arr.splice(index, 1);
+    }
+
+    for (i = 1; i <= cols * cols; i++) {
+        arrN.push(i)
+    }
+
+    for (i = 0; i < cols; i++) {
+        tr = document.createElement('tr');
+        for (j = 0; j < n; j++) {
+            td = document.createElement('td');
+            td.innerText(getNum(arrN));
+            tr.appendChild(td);
+        }
+        panel.appendChild(tr);
+    }
+
+
+    // var ulEl = document.getElementsByTagName('ul')[0],
+    //     newEl;
+    //
+    // for (i = 0; i < 5; i++) {
+    //     newEl = document.createElement('li');
+    //     newEl.innerText = 'New <li> #' + i;
+    //     ulEl.appendChild(newEl);
+    // }
+
+</script>
+
+</body>
+</html>

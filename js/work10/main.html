@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canv</title>
+</head>
+<body>
+    <canvas id="canva" width="400" height="400"></canvas>
+    <script>
+
+        var flag = false;
+
+        canva.onmousedown = function () {
+            flag = true;
+        };
+
+        canva.onmousemove = function (e) {
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+
+            if(flag) {
+                var cntx = canva.getContext('2d');
+                cntx.fillStyle = 'black';
+                cntx.fillRect(x,y,1,1);
+
+                cntx.fillStyle = 'green';
+                cntx.fillRect(x+100,y,1,1);
+
+                cntx.fillStyle = 'blue';
+                cntx.fillRect(x,y+100,1,1);
+
+                cntx.fillStyle = 'red';
+                cntx.fillRect(x+100,y+100,1,1);
+            }
+        };
+
+        canva.onmouseup = function () {
+            flag = false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work5</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/grid.css">
+
+</head>
+<body>
+<script>
+
+    var arr = [1,2,3,4,5,6];
+    for (key in arr){
+        arr[key] = function(){console.log(key)}
+    }
+    console.log('arr5' + arr['5']());
+
+    // var object = {
+    //     age: 18,
+    //     name: 'Ivan',
+    //     isMale: true,
+    //     interests: {
+    //         football: true,
+    //         hockey: true,
+    //         tennis: false
+    //     }
+    // };
+    //
+    // var copy = function (obj) {
+    //     var newobj = {};
+    //     for (var itm in obj) {
+    //         newobj[itm] = obj[itm]
+    //     }
+    //     return newobj;
+    // };
+    //
+    // var object2 = copy(object);
+    // object2.age = 20;
+    //
+    // console.dir(object);
+    // console.dir(object2);
+
+    // function pow(x, n) {
+    //
+    //     if (n === 0) {
+    //         return 1
+    //     } else if (n === 1) {
+    //         return x;
+    //     } else {
+    //         return pow(x, n - 1) * x;
+    //     }
+    //
+    // }
+
+    // function pow(x, n) {
+    //
+    //     if (n === 0) {
+    //         return 1
+    //     } else if (n === 1) {
+    //         return x;
+    //     } else {
+    //         var s = x;
+    //         for (i = 2; i <= n; i++) {
+    //             s *= x;
+    //         }
+    //
+    //         return s;
+    //     }
+    //
+    // }
+    //
+    // console.log(pow(2, 1000));
+
+    // function createCounter() {
+    //
+    //     var c = 0;
+    //
+    //     return function () {
+    //         return ++c;
+    //     }
+    // }
+    //
+    // var gen = createCounter();
+    // console.log(gen());
+    // console.log(gen());
+    // console.log(gen());
+    // console.log(gen());
+    // console.log(gen());
+    // console.log(gen());
+    //
+    // var gen2 = createCounter();
+    // console.log(gen2());
+    // console.log(gen2());
+    // console.log(gen2());
+    // console.log(gen2());
+    // console.log(gen2());
+    // console.log(gen2());
+
+    // var cat = {
+    //     name: 'Barsik',
+    //     age: 3,
+    //     keyword: 'Meow'
+    // };
+    //
+    // var dog = {
+    //     name: 'Bobik',
+    //     age: 5,
+    //     keyword: 'Gav'
+    // };
+    //
+    // function logHello() {
+    //   console.log(this.keyword + ' my name is ' + this.name);
+    // }
+    //
+    // cat.hello = logHello;
+    // dog. hello = logHello;
+    //
+    // cat.hello();
+    // dog.hello();
+
+
+
+
+
+</script>
+
+</body>
+</html>
