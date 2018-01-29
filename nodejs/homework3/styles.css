@@ -1,6 +1,9 @@
-.itm_val {
+.itm_val,
+.loc_val {
     list-style-type: circle;
-    font-family: Courier New, sans-serif
+    font-family: Courier New, sans-serif;
+    font-size: 13px
+
 }
 
 .time_head {

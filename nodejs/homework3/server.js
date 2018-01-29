@@ -2,6 +2,8 @@ let http = require("http");
 let fs = require('fs');
 let url = require("url");
 let path = require('path');
+let request = require('request');
+let cheerio = require('cheerio');
 
 let mimeTypes = {
     '.js': 'text/javascript',
@@ -13,7 +15,42 @@ let mimeTypes = {
     '.json' : 'application/json'
 };
 
+function getCourses() {
+
+    let parsedurl = 'https://btc.guru/#';
+
+    request(parsedurl, function (error, response, html) {
+        if (!error && response.statusCode === 200) {
+            let $ = cheerio.load(html);
+            let data = {};
+            // let html = $.html();
+            let usdbtc = $('ul.btc_currency li').each(function(i, elm) {
+                itm = $(this).text().replace(/\s{1,}/g, '');
+                data[itm.substring(0,3)] = itm.substring(3, itm.length);
+            });
+            fs.truncate('courses.json', 0, function() {
+                fs.writeFile('courses.json', JSON.stringify(data), function (err) {
+                    if (err) {
+                        return console.log("Error writing file: " + err);
+                    }
+                });
+            });
+        }
+    });
+}
+
+getCourses();
+
+setInterval(function () {
+    getCourses();
+}, 2000);
+
+
 http.createServer(function onRequest(request, response) {
+
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
     let postData = "";
     let pathname = url.parse(request.url).path;
     if (pathname === '/')

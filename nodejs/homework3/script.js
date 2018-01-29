@@ -7,7 +7,6 @@ function loadBTCCourses() {
         items.push("<ul>");
 
         $.each(data, function (key, val) {
-            console.dir(key + ' - ' + val);
             items.push("<li class='itm_val'>" + key + "/BTC : " + val['last'] + "</li>");
         });
         items.push("<ul/>");
@@ -17,8 +16,26 @@ function loadBTCCourses() {
     });
 }
 
+function loadBTCLocalCourse() {
+    $.getJSON("http://localhost:8000/courses.json", function (data) {
+
+        let items = [];
+        items.push("<ul>");
+
+        $.each(data, function (key, val) {
+            items.push("<li class='loc_val'>" + key + " : " + val + "</li>");
+        });
+        items.push("<ul/>");
+
+        $("#local_crs").html(items);
+
+    });
+}
+
 loadBTCCourses();
+loadBTCLocalCourse();
 
 setInterval(function () {
-    loadBTCCourses()
+    loadBTCCourses();
+    loadBTCLocalCourse();
 }, 5000);
