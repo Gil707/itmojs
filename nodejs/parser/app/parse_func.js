@@ -103,23 +103,32 @@ function saveImg(link) {
 
         let imgName = valArr[valArr.length - 1];
 
-        mkdirp(resPath, function (err) {
-            if (err) {
-                console.error(err)
-            }
-            else {
-                request(fullUrl).on('response', function (res) {
-                    if (res.statusCode === 200) {
-                        try {
-                            res.pipe(fs.createWriteStream(resPath + imgName));
-                            console.log('Image "' + imgName + '" added.')
-                        } catch (e) {
-                            console.log(e);
-                        }
+        fs.stat(resPath + imgName, function(err, stat) {
+            if(err == null) {
+                console.log('File already exists.');
+            } else if(err.code === 'ENOENT') {
+                mkdirp(resPath, function (err) {
+                    if (err) {
+                        console.error(err)
+                    }
+                    else {
+                        request(fullUrl).on('response', function (res) {
+                            if (res.statusCode === 200) {
+                                try {
+                                    res.pipe(fs.createWriteStream(resPath + imgName));
+                                    console.log('Image "' + imgName + '" added.')
+                                } catch (e) {
+                                    console.log(e);
+                                }
+                            }
+                        });
                     }
                 });
+            } else {
+                console.log('Error: ', err.code);
             }
         });
+
     } else {
         console.log('Link is empty, no photo.');
     }
