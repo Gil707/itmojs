@@ -1,5 +1,7 @@
 let request = require('request');
 let cheerio = require('cheerio');
+let fs = require('fs');
+let mkdirp = require('mkdirp');
 let dbsaver = require('./dbsaver');
 
 /*
@@ -82,9 +84,45 @@ function getItem(url) {
         item.img = ($('#item_img').attr('src'));
         item.meta = ($('#item_wrap').find('meta[itemprop="description"]').attr("content"));
 
-        dbsaver.saveToMongo(item);
+        // dbsaver.saveToMongo(item);
+        saveImg(item.img)
 
     });
+}
+
+function saveImg(link) {
+
+    if (link) {
+        let fullUrl = 'https://plitkazavr.ru' + link;
+        let valArr = link.split('/');
+        let resPath = '';
+
+        for (let i = 1; i < valArr.length - 1; i++) {
+            resPath += valArr[i] + '/';
+        }
+
+        let imgName = valArr[valArr.length - 1];
+
+        mkdirp(resPath, function (err) {
+            if (err) {
+                console.error(err)
+            }
+            else {
+                request(fullUrl).on('response', function (res) {
+                    if (res.statusCode === 200) {
+                        try {
+                            res.pipe(fs.createWriteStream(resPath + imgName));
+                            console.log('Image "' + imgName + '" added.')
+                        } catch (e) {
+                            console.log(e);
+                        }
+                    }
+                });
+            }
+        });
+    } else {
+        console.log('Link is empty, no photo.');
+    }
 }
 
 function getRightName(name) {
@@ -137,5 +175,6 @@ module.exports = {
     getLinksCompany: getLinksCompany,
     getColsGroups: getColsGroups,
     getGroupItems: getGroupItems,
-    getItem: getItem
+    getItem: getItem,
+    saveImg: saveImg
 };
